@@ -1,4 +1,4 @@
-package sms;
+package sms.Config;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

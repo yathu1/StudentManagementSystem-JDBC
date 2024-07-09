@@ -1,4 +1,4 @@
-package sms;
+package sms.objects;
 
 public class Student {
 

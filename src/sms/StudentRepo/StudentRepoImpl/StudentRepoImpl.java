@@ -1,9 +1,13 @@
 
-package sms;
+package sms.StudentRepo.StudentRepoImpl;
+
+import sms.Config.DbConfig;
+import sms.objects.Student;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import sms.StudentRepo.StudentRepo;
 
 /**
  *
@@ -133,6 +137,31 @@ public class StudentRepoImpl implements StudentRepo{
         }
         catch(Exception e){
             return e.toString();
+        }
+    }
+    
+    @Override
+    public void getAllStudent(){
+        String sql="SELECT * from student";
+
+        try  {
+            Connection con = dbconfig.dbConnection();
+            PreparedStatement st=con.prepareStatement(sql);
+            ResultSet rs= st.executeQuery(sql);
+
+   
+            while(rs.next())
+            {
+                System.out.println("\n ID: "+rs.getInt(1) +
+                   "\n Name: "+rs.getString(2)+
+                   "\n Age: "+rs.getInt(3)+
+                   "\n Department: "+rs.getString(4)+
+                   "\n District: "+rs.getString(5)+
+                   "\n NIC: "+rs.getString(6)+
+                   "\n Gender: "+rs.getString(7)+
+                   "\n Performance: "+rs.getInt(8)+ " ");
+            }
+        }catch(Exception e){
         }
     }
 }

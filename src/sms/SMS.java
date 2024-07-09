@@ -1,6 +1,9 @@
 
 package sms;
 
+import sms.Util.SmsDisplay;
+import sms.Service.ServiceImpl.StudentServiceImpl;
+import sms.Service.StudentService;
 import java.util.Scanner;
 
 /**
@@ -29,7 +32,7 @@ public class SMS {
                      service.deleteStudent();
                      break;
                  case 4:
-                    System.out.println("4");
+                    service.getAllStudent();
                      break;
                  case 5:
                     service.searchStudent();

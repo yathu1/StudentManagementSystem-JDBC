@@ -2,9 +2,13 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package sms;
+package sms.Service.ServiceImpl;
 
+import sms.objects.Student;
 import java.util.Scanner;
+import sms.Service.StudentService;
+import sms.StudentRepo.StudentRepo;
+import sms.StudentRepo.StudentRepoImpl.StudentRepoImpl;
 
 /**
  *
@@ -132,6 +136,16 @@ public class StudentServiceImpl implements StudentService{
         int id = input2.nextInt();
         
         System.out.println(repo.deleteStudent(id));
+        }
+    
+     @Override
+    public void getAllStudent() {
+         System.out.print("\033[H\033[2J");
+        System.out.println("\t--------- * ---------");
+        System.out.println("\t    Student Details      ");
+        System.out.println("\t--------- * ---------");
+        
+        repo.getAllStudent();
         }
     
 }

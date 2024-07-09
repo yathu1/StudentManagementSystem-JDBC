@@ -1,4 +1,4 @@
-package sms;
+package sms.Util;
 public class SmsDisplay {
     
     public SmsDisplay(){}
